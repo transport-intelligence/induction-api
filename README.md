@@ -14,4 +14,5 @@
   * Learn: https://graphql.org/learn
   * https://javascript.works-hub.com/learn/why-i-use-graphql-and-avoid-rest-apis-9b520
   * https://blog.runscope.com/posts/you-might-not-need-graphql
+  * [Charting time-series metrics with GraphQL (52mn YouTube video)](https://www.youtube.com/watch?v=srfaKA2wJ0s)
 

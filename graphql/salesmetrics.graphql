@@ -1,0 +1,17 @@
+
+type RootQuery {
+  sales(date: DateFilter): SalesMetrics
+}
+
+type SalesMetrics {
+  revenue(stat: STAT = sum): Float
+}
+
+input DateFilter {
+  start: String
+  end: String
+}
+
+enum STAT { sum, mean, min, max }
+
+
