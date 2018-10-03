@@ -14,5 +14,10 @@
   * Learn: https://graphql.org/learn
   * https://javascript.works-hub.com/learn/why-i-use-graphql-and-avoid-rest-apis-9b520
   * https://blog.runscope.com/posts/you-might-not-need-graphql
+  * [PostGraphile, quickly build GraphQL API on top of PostgreSQL database](https://www.graphile.org/postgraphile/)
   * [Charting time-series metrics with GraphQL (52mn YouTube video)](https://www.youtube.com/watch?v=srfaKA2wJ0s)
+* Time-series databases
+  * [Timescale, time-series database based on PostgreSQL](https://blog.timescale.com/when-boring-is-awesome-building-a-scalable-time-series-database-on-postgresql-2900ea453ee2)
+  * [Top 10 time-series databases, as of 2016]()
 
+  

@@ -1,6 +1,8 @@
 
 type RootQuery {
   sales(date: DateFilter): SalesMetrics
+  interval(by: PERIOD): Interval
+  group(limit: Int): Group
 }
 
 type SalesMetrics {
@@ -11,6 +13,27 @@ input DateFilter {
   start: String
   end: String
 }
+
+type Interval {
+  date: String
+  revenue: Float
+}
+
+union Group = Agent | Category
+
+type Category {
+  name: String
+  revenue: Float
+  group: Group
+}
+
+type Agent {
+  first_name: String
+  revenue: Float
+  group: Group
+}
+
+enum PERIOD { hour, day, month }
 
 enum STAT { sum, mean, min, max }
 
