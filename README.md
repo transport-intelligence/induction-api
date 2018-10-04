@@ -5,15 +5,16 @@
   * OpenAPI generator: https://github.com/OpenAPITools/openapi-generator
   * Swagger editor online: https://swagger.io/tools/swagger-editor / https://editor.swagger.io
 * RESTful API
-  * Build RESTful API with Node.js: https://hackernoon.com/how-to-build-powerful-rest-apis-blazingly-fast-with-node-js-86d6e55a5b34
-  * REST-hapi: https://resthapi.com/
+  * [Build RESTful API with Node.js, on Hackernoon](https://hackernoon.com/how-to-build-powerful-rest-apis-blazingly-fast-with-node-js-86d6e55a5b34)
+  * REST-hapi: https://resthapi.com
 * JSON
-  * JSON-stats: https://json-stat.org/
-  * JSON-Schema: http://json-schema.org/
+  * JSON-stats: https://json-stat.org
+  * JSON-Schema: http://json-schema.org
 * [GraphQL](https://graphql.org)
   * Learn: https://graphql.org/learn
-  * https://javascript.works-hub.com/learn/why-i-use-graphql-and-avoid-rest-apis-9b520
-  * https://blog.runscope.com/posts/you-might-not-need-graphql
+  * [Why I use GraphQL and avoid REST APIs, by Max Desiatov, 5 June 2018](https://desiatov.com/why-graphql/)
+  * [You may not need GraphQL, by Phil Sturgeon on the Runscope blog, 11 April 2017](https://blog.runscope.com/posts/you-might-not-need-graphql)
+  * [6mn introduction to GraphQL, by VegaIT Sourcing, 25 September 2018](https://www.vegaitsourcing.rs/media-center/blog/2018/9/introduction-to-graphql)
   * [PostGraphile, quickly build GraphQL API on top of PostgreSQL database](https://www.graphile.org/postgraphile/)
   * [Charting time-series metrics with GraphQL (52mn YouTube video)](https://www.youtube.com/watch?v=srfaKA2wJ0s)
 * Time-series databases
