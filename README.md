@@ -19,6 +19,11 @@
   * [Charting time-series metrics with GraphQL (52mn YouTube video)](https://www.youtube.com/watch?v=srfaKA2wJ0s)
 * Time-series databases
   * [Timescale, time-series database based on PostgreSQL](https://blog.timescale.com/when-boring-is-awesome-building-a-scalable-time-series-database-on-postgresql-2900ea453ee2)
-  * [Top 10 time-series databases, as of 2016]()
+  * [Top open source time-series databases, as of April 2016](https://www.outlyer.com/blog/top10-open-source-time-series-databases/):
+    [DalmantineDB](https://dalmatiner.io), [InfluxDB](https://influxdata.com), [Prometheus](https://prometheus.io), [Riak TS](http://basho.com/products/riak-ts),
+    [OpenTSDB](http://opentsdb.net), [KairosDB](https://kairosdb.github.io), [ElasticSearch (ES)](https://www.elastic.co/products/elasticsearch),
+    [Druid](http://druid.io), [Blueflood](http://blueflood.io), [Graphite (Whisper)](https://graphiteapp.org),
+    [Atlas](https://github.com/Netflix/atlas), [Chronic Server](http://www.chronix.io), [Hawkular](http://www.hawkular.org),
+    [Warp 10](http://www.warp10.io), [Heroic](https://spotify.github.io/heroic), [Akumuli](http://akumuli.org)    
 
   
