@@ -5,8 +5,14 @@
 * [Building scalable time-series database on PostgreSQL](https://blog.timescale.com/when-boring-is-awesome-building-a-scalable-time-series-database-on-postgresql-2900ea453ee2)
 * [Getting started with TimescaleDB](https://docs.timescale.com/v0.12/getting-started)
 
+## GraphQL
+* [Introduction to PostGraphile (GraphQL on top of PostgreSQL)](http://www.graphile.org/postgraphile/introduction/)
+
 # Installation
-## MacOS
+
+## TimescaleDB extension
+
+### MacOS
 * Add the Homebrew tap for TimescaleDB:
 ```bash
 $ brew tap timescale/tap
@@ -41,7 +47,7 @@ $ createuser postgres -s
 $ brew services list | grep postgre
 ```
 
-## Create a Timescale-enabled database
+### Create a Timescale-enabled database
 * Start a SQL session:
 ```bash
 $ psql -U postgres -h localhost
@@ -81,7 +87,7 @@ tutorial=# \q
 $ psql -U postgres -h localhost -d tutorial
 ```
 
-## Create a (Hyper)table
+### Create a (Hyper)table
 * Reference: https://docs.timescale.com/v0.12/getting-started/creating-hypertables
 
 * Create a regular table and transform it:
@@ -121,5 +127,46 @@ tutorial=# SELECT * FROM conditions ORDER BY time DESC LIMIT 100;
  2018-10-03 20:55:26.631314+02 | office   |          70 |       50
 (12 rows)
 ```
+
+## PostGraphile
+
+### Node.js
+
+#### MacOS
+```bash
+$ brew install node
+```
+
+### Postgraphile
+```bash
+$ npm install -g postgraphile
+```
+
+* [Inflection plug-in](https://www.graphile.org/postgraphile/inflection) (optional):
+```bash
+$ npm install -g postgraphile @graphile-contrib/pg-simplify-inflector
+$ postgraphile --append-plugins @graphile-contrib/pg-simplify-inflector
+```
+
+# Sample queries
+
+## Launch PostGraphile
+```bash
+$ postgraphile -c "postgres://postgres@localhost/tutorial" -a -j --watch
+```
+
+## Extract temperature and humidity for all the records
+```json
+query conditions_first_10 {
+  allConditions(first: 10) {
+    nodes {
+    	time,
+    	temperature,
+    	humidity
+    }
+  }
+}
+```
+
 
 
