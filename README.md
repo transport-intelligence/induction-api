@@ -17,6 +17,9 @@
   * [6mn introduction to GraphQL, by VegaIT Sourcing, 25 September 2018](https://www.vegaitsourcing.rs/media-center/blog/2018/9/introduction-to-graphql)
   * [PostGraphile, quickly build GraphQL API on top of PostgreSQL database](https://www.graphile.org/postgraphile/)
   * [Charting time-series metrics with GraphQL (52mn YouTube video)](https://www.youtube.com/watch?v=srfaKA2wJ0s)
+* Implement a SOAP server
+  * [Spyne, write quickly Python-based servers, including SOAP-based ones](http://spyne.io/#inprot=Soap11&outprot=Soap11&s=rpc&tpt=WsgiApplication&validator=true)
+  * [Fabric, convert WSDL to Protobuf](http://github.com/pfisterer/fabric)
 * Time-series databases
   * [Timescale, time-series database based on PostgreSQL](https://blog.timescale.com/when-boring-is-awesome-building-a-scalable-time-series-database-on-postgresql-2900ea453ee2)
   * [Top open source time-series databases, as of April 2016](https://www.outlyer.com/blog/top10-open-source-time-series-databases/):
