@@ -92,12 +92,17 @@ $ psql -U postgres -h localhost -d tutorial
 
 * Create a regular table and transform it:
 ```sql
+tutorial=# DROP TABLE if exists conditions;
 
 tutorial=# CREATE TABLE conditions (
-  time        TIMESTAMPTZ       NOT NULL,
-  location    TEXT              NOT NULL,
-  temperature DOUBLE PRECISION  NULL,
-  humidity    DOUBLE PRECISION  NULL
+  id             INTEGER           NULL,
+  time           TIMESTAMPTZ       NOT NULL,
+  temperature    DOUBLE PRECISION  NULL,
+  humidity       DOUBLE PRECISION  NULL,
+  light          DOUBLE PRECISION  NULL,
+  co2            DOUBLE PRECISION  NULL,
+  humidity_ratio DOUBLE PRECISION  NULL,
+  occupancy      BOOLEAN           NULL
 );
 CREATE TABLE
 
@@ -128,6 +133,16 @@ tutorial=# SELECT * FROM conditions ORDER BY time DESC LIMIT 100;
 (12 rows)
 ```
 
+### Load the occupancy data set into the database
+"date","Temperature","Humidity","Light","CO2","HumidityRatio","Occupancy"
+"1","2015-02-04 17:51:00",23.18,27.272,426,721.25,0.00479298817650529,1
+
+* [Reference for the ``\copy`` command in PostgreSQL](https://www.postgresql.org/docs/current/static/sql-copy.html)
+```bash
+$ bzcat ../../data/time-series/datatraining.txt.bz2 | psql -U postgres -h localhost -d tutorial -c "copy conditions(id,time,temperature,humidity,light,co2,humidity_ratio,occupancy) from stdin delimiter ',' csv header;"
+COPY 8143
+```
+
 ## PostGraphile
 
 ### Node.js
@@ -156,13 +171,55 @@ $ postgraphile -c "postgres://postgres@localhost/tutorial" -a -j --watch
 ```
 
 ## Extract temperature and humidity for all the records
+* Open a Web browser on the [local GraphiQL just launched application](http://localhost:5000),
+  copy and paste the following JSON query, and execute it:
 ```json
 query conditions_first_10 {
   allConditions(first: 10) {
     nodes {
     	time,
     	temperature,
-    	humidity
+    	humidity,
+      light,
+      co2,
+      humidityRatio,
+      occupancy
+    }
+  }
+}
+{
+  "data": {
+    "allConditions": {
+      "nodes": [
+        {
+          "time": "2015-02-04T17:51:00+01:00",
+          "temperature": 23.18,
+          "humidity": 27.272,
+          "light": 426,
+          "co2": 721.25,
+          "humidityRatio": 0.00479298817650529,
+          "occupancy": true
+        },
+        {
+          "time": "2015-02-04T17:51:59+01:00",
+          "temperature": 23.15,
+          "humidity": 27.2675,
+          "light": 429.5,
+          "co2": 714,
+          "humidityRatio": 0.00478344094931065,
+          "occupancy": true
+        },
+...
+        {
+          "time": "2015-02-04T18:00:00+01:00",
+          "temperature": 23.075,
+          "humidity": 27.175,
+          "light": 419,
+          "co2": 688,
+          "humidityRatio": 0.00474535071966655,
+          "occupancy": true
+        }
+      ]
     }
   }
 }
